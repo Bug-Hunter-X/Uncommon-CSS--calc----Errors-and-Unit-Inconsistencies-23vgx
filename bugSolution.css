@@ -1,0 +1,30 @@
+/* bugSolution.css */
+
+/* Correctly using calc() in nested elements - ensure parent has defined width */
+.parent {
+  width: 500px; /* Explicit width for the parent */
+}
+
+.child {
+  width: calc(100% - 20px);
+}
+
+/* Consistent unit usage within calc() */
+.element {
+  width: calc(100px - 2em); /* Both in px or both in em or rem etc */
+}
+
+/* Correctly escape special characters within strings used with attr() function */
+.element-attr {
+ width: calc(100px - 2 * attr(data-value, "10px")); /* Correctly escaped */
+}
+
+/* More robust calculation handling */
+.robust-calc {
+  width: calc(min(100%, 500px)); /* Handles edge cases better */
+}
+
+/* Avoid complex calculations for improved browser compatibility */
+.simple-calc {
+  width: 480px; /* Simplify when possible */
+}
